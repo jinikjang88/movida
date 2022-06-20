@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>query param 으로 링크를 준 경우 </h3>
+  <ul>
+    <li th:each="dto : ${list}">
+      <a th:href="@{/exView(sNo=${dto.sNo})}">[[${dto}]]</a>
+    </li>
+  </ul>
+
+<h3> path로 링크를 준 경우 </h3>
+<ul>
+    <li th:each="dto : ${list}">
+        <a th:href="@{/exView/{sNo}(sNo = ${dto.sNo})}">[[${dto}]]</a>
+    </li>
+</ul>
+
+</body>
+</html>

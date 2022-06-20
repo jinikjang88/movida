@@ -1,0 +1,36 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/h2/database
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+
+  thymeleaf:
+    cache: false
+
+  servlet:
+    multipart:
+      enabled: true
+      max-request-size: 30MB
+      max-file-size: 10MB
+      location: /Users/mz02-jijang/IdeaProjects/study/movida/src/main/resources/tmpDir
+
+com:
+  study:
+    movida:
+      upload:
+        path: /Users/mz02-jijang/IdeaProjects/study/movida/src/main/resources/tmpDir
